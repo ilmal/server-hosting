@@ -1,0 +1,30 @@
+header {
+  background-color: $primary-color;
+  padding: 20px;
+}
+
+.logo {
+  display: inline-block;
+  color: $secondary-color;
+  font-size: 24px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: $secondary-color;
+  text-decoration: none;
+}

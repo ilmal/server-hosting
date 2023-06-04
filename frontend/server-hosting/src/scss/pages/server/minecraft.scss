@@ -1,0 +1,598 @@
+.minecraftBody{
+    width: 100%;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    grid-template-rows: 5% 10% auto;
+
+    span{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        animation-name: animateInAnimation;
+        animation-duration: 1s;
+    }
+
+    .testServerCard{
+        z-index: 5;
+        grid-column: 1/4;
+        grid-row: 3/4;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, $backgroundColorBack, rgba(#fff, $alpha: .25), $backgroundColorBack);
+        opacity: 1;
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: 15% 60% 25%;
+        div{
+            grid-column: 2/3;
+            grid-row: 2/3;
+            width: 100%;
+            height: 100%;
+            background-color: $backgroundColor;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 25% 75%;
+            .testHeader{
+                grid-column: 1/2;
+                grid-row: 1/2;
+                background-color: rgba($color: $yellowColor, $alpha: .15);
+                border-radius: 10px 10px 0px 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    color: rgba($color: $yellowColor, $alpha: .9);
+                }
+            }
+            .container{
+                grid-column: 1/2;
+                grid-row: 2/3;
+                border-radius: 0px 0px 10px 10px;
+                display: grid;
+                grid-template-columns: 20% 60% 20%;
+                grid-template-rows: 10% 55% 35%;
+                div{
+                    grid-column: 2/3;
+                    grid-row: 2/3;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content:space-between;
+                    span{
+                        font-size: 2em;
+                        color: rgba($color: #fff, $alpha: .9)
+                    }
+                    button{
+                        grid-column: 2/3;
+                        grid-row: 2/3;
+                        outline: none;
+                        border:none;
+                        background-color: rgba($greenColor, $alpha: .15);
+                        padding: 5% 25% 5% 25%;
+                        color: $greenColor;
+                        border-radius: 10px;
+                        font-size: 1em;
+                        transition: all 1s ease;
+                        &:hover{
+                            background-color: rgba($greenColor, $alpha: .25);
+                        }
+                    }
+                }
+            }
+            span{
+                color: white;
+            }
+        }
+    }
+
+    .container{
+        grid-column: 2/3;
+        grid-row: 3/4;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 33% auto 33%;
+        grid-template-rows: 10% 69% auto;
+        justify-items: center;
+
+        .minecraftCards{
+
+            // filter: blur(3px); /*------------- THIS IS TEMP CODE -----------------*/
+
+            grid-row: 2/3;
+            width: 80%;
+            height: 100%;
+            background-color: $backgroundColor;
+            border-radius: 10px;
+            transition: all 1s ease;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 30% 20% 20% 0% 30%;
+            align-items: center;
+            justify-items: center;
+            animation-name: animateInAnimation;
+            animation-duration: 2s;
+
+            div{
+                pointer-events: none;
+            }
+            span{
+                grid-row: 1/2;
+                grid-column: 1/2;
+                font-size: 40px;
+            }
+            
+            .titleContainer{
+                grid-row: 1/2;
+                grid-column: 1/2;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px 10px 0px 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .priceContainer{
+                grid-row: 2/3;
+                grid-column: 1/2;
+                span{
+                    color: white;
+                }
+                .priceMonth{
+                    font-size: 20px;
+                    margin-left: -8px;
+                }
+            }
+
+            .specsContainer{
+                grid-row: 3/4;
+                grid-column: 1/2;
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 15% 35% 50%;
+                grid-template-rows: 50% 50%;
+                span{
+                    grid-column: 2/3;
+                    text-align: start;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 20px;
+                }
+                .cpuSpec{
+                    grid-row: 1/2;
+                    grid-column: 2/3;
+                }
+                .memSpec{
+                    grid-row: 2/3;
+                    grid-column: 2/3;
+                }
+                .cpuSpecValue{
+                    grid-row: 1/2;
+                    grid-column: 3/4;
+                    text-align: center;
+                }
+                .memSpecValue{
+                    grid-row: 2/3;
+                    grid-column: 3/4;
+                    text-align: center;
+                }
+            }
+
+            .seperationline{
+                grid-row: 4/5;
+                grid-column: 1/2;
+                width: 50%;
+                border-bottom: rgba(255,255,255,0.2) 1px solid;
+            }
+
+            .description{
+                grid-row: 5/6;
+                grid-column: 1/2;
+                display: grid;
+                grid-template-columns: 10% auto 10%;
+                grid-template-rows: 100%;
+                span{
+                    grid-column: 2/3;
+                    font-size: 20px;
+                    font-style:italic;
+                    color: rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+
+        .minecraftCards:hover{
+            background-color: rgb(43,47,51);
+        }
+
+        .basic{
+            grid-column: 1/2;
+            .basicTitleContainer{
+                background-color: rgba(81, 207, 102, 0.15);
+            }
+            span{
+                color: rgba(81, 207, 102, 0.9);
+            }
+        }
+
+        .normal{
+            grid-column: 2/3;
+            .normalTitleContainer{
+                background-color:  rgba(50,154,240,0.15);
+            }
+            span{
+                color: rgba(50,154,240,0.9);
+            }
+        }
+
+        .premium{
+            grid-column: 3/4;
+            .premiumTitleContainer{
+                background-color: rgba(204,93,232,0.15);
+            }
+            span{
+                color: $pinkColor;
+            }
+        }
+
+        // sold out code, dynamically applied by adding class to component
+        .serverLandingPageCardSoldOutTemplate{
+            pointer-events: none;
+            &:hover{
+                background-color: $backgroundColor !important;
+            }
+            .serverLandingPageCardSoldOutDiv{
+                z-index: 10;
+                grid-column: 1/2;
+                grid-row: 1/6;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 25% 30% 45%;
+
+                .serverLandingPageCardSoldOutMiddleDiv{
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                    background-color: $backgroundColor;
+                    .serverLandingPageCardSoldOutMiddleDivInner{
+                        background-color: rgba($color: $yellowColor, $alpha: .15);
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        span{
+                            width: 80%;
+                            color: rgba($color: #fff, $alpha: .8);
+                            font-size: 2rem;
+                        }
+                    }
+                }
+                .serverLandingPageCardSoldOutBlurDivTop{
+                    backdrop-filter: blur(3px);
+                    border-radius: 10px 10px 0px 0px;
+                }
+                .serverLandingPageCardSoldOutBlurDivBottom{
+                    backdrop-filter: blur(3px);
+                    border-radius: 0px 0px 10px 10px;
+                }
+            }
+        }
+    }
+}
+
+.minecraftBasicBody{
+    width: 100%;
+    height: 210vh;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 7% 86% 7%;
+    grid-template-rows: 50% 5% 45%;
+    .overviewBody{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        display: grid;
+        grid-template-columns: 25% 30% 30% 15%;
+        grid-template-rows: 10% 15% 40% 30%;
+        .header{
+            align-self: end;
+            span{
+                align-self: end;
+                color: white;
+                font-size: 2.5rem;
+            }
+        }
+        @mixin upperContainers(){
+            grid-row: 1/3;
+            display: grid;
+            grid-template-rows: 40% 60%;
+            grid-template-columns: 100%;
+            span{
+                grid-column: 1/2;
+                grid-row: 1/2;
+                align-self: end;
+                font-size: 1.7rem;
+                color:rgba($color: #fff, $alpha: .9);
+            }
+            .upperContainersSeperator{
+                grid-row: 1/2;
+                grid-column: 1/2;
+                width: 50%;
+                transform: translateY(1rem);
+                animation-name: animateInAnimation;
+                animation-duration: 1s;
+            }
+        }
+        .planContainer{
+            @include upperContainers;
+            grid-column: 2/3;
+            .upperContainersSeperator{
+                border-bottom: 1px $orangeColor solid;
+            }
+            .TESTContainersSeperator{
+                border-bottom: 1px $greenColor solid;
+            }
+            .BASICContainersSeperator{
+                border-bottom: 1px $greenColor solid;
+            }
+            .NORMALContainersSeperator{
+                border-bottom: 1px $blueColor solid;
+            }
+            .PREMIUMContainersSeperator{
+                border-bottom: 1px $pinkColor solid;
+            }
+            .planContainerInner{
+                grid-row: 2/3;
+                grid-column: 1/2;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                @mixin innerContainer {
+                    width: 50%;
+                    height: 40%;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    span{
+                        align-self: center;
+                    }
+                }
+                .TEST{
+                    @include innerContainer;
+                    background-color: rgba($color: $greenColor, $alpha: .35);
+                    span{
+                        color: rgba($color: $greenColor, $alpha: .9);
+                    }
+                    .upperContainersSeperator{
+                        border-bottom: 1px $greenColor solid;
+                    }
+                }
+                .BASIC{
+                    @include innerContainer;
+                    background-color: rgba($color: $greenColor, $alpha: .35);
+                    span{
+                        color: rgba($color: $greenColor, $alpha: .9);
+                    }
+                    .upperContainersSeperator{
+                        border-bottom: 1px $greenColor solid;
+                    }
+                }
+                .NORMAL{
+                    @include innerContainer;
+                    background-color: rgba($color: $blueColor, $alpha: .35);
+                    span{
+                        color: rgba($color: $blueColor, $alpha: .9);
+                    }
+                    .upperContainersSeperator{
+                        border-bottom: 1px $blueColor solid;
+                    }
+                }
+                .PREMIUM{
+                    @include innerContainer;
+                    background-color: rgba($color: $pinkColor, $alpha: .35);
+                    span{
+                        color: rgba($color: $pinkColor, $alpha: .9);
+                    }
+                    .upperContainersSeperator{
+                        border-bottom: 1px $pinkColor solid;
+                    }
+                }
+            }
+        }
+        .priceContainer{
+            @include upperContainers;
+            grid-column: 3/4;
+            .upperContainersSeperator{
+                border-bottom: 1px $smoothRed solid;
+            }
+            .priceContainerInner{
+                grid-row: 2/3;
+                grid-column: 1/2;
+                align-self: center;
+                justify-self: start;
+                width: 50%;
+                height: fit-content;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                span{
+                    align-self: center;
+                    color: rgba($color: #fff, $alpha: .7);
+                    font-size: 2rem;
+                }
+                p{
+                    align-self: flex-start;
+                    color: rgba($color: #fff, $alpha: .7);
+                    font-size: .8rem;
+                    margin-top: .2rem;
+                }
+            }
+        }
+        @mixin specsContainers(){
+            grid-row: 3/4;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            .specHeader{
+                grid-column: 1/2;
+                align-self: end;
+                grid-row: 1/2;
+                animation-name: animateInAnimation;
+                animation-duration: .5s;
+                width: 100%;
+                span{
+                    font-size: 1.7rem;
+                    color:rgba($color: #fff, $alpha: .9);
+                }
+                .specSeperator{
+                    grid-row: 2/3;
+                    grid-column: 1/2;
+                    width: 50%;
+                    padding-top: 1rem;
+                    animation-name: animateInAnimation;
+                    animation-duration: 1s;
+                }
+            }
+            .specValue{
+                grid-row: 2/3;
+                grid-column: 1/2;
+                display: flex;
+                justify-content: flex-start;
+                animation-name: animateInAnimation;
+                animation-duration: 1s;
+                span{
+                    font-size: 20px;
+                    color:rgba($color: #fff, $alpha: .7);
+                }
+                .value{
+                    margin-left: 20px;
+                }
+            }
+            .mem{
+                grid-row: 3/4;
+                animation-name: animateInAnimation;
+                animation-duration: 1.5s;
+            }
+            .storage{
+                grid-row: 4/5;
+                animation-name: animateInAnimation;
+                animation-duration: 2s;
+            }
+        }
+        .specsConatiner{
+            @include specsContainers;
+            grid-column: 2/3;
+            .specHeader .specSeperator{
+                border-bottom: 1px $orangeColor solid;
+            }
+            .specValue .value{
+                color: $orangeColor;
+            }
+        }
+        .gameContainer{
+            @include specsContainers;
+            grid-column: 3/4;
+            .specHeader .specSeperator{
+                border-bottom: 1px $blueColor solid;
+            }
+            .specValue .value{
+                color: $blueColor;
+            }
+        }
+        .changeLevelContainer{
+            grid-column: 2/4;
+            grid-row: 4/5;
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(3, 30% 3%);
+            grid-template-rows: 50% 30% 20%;
+            align-items: center;
+            .changeLevelInnerHeader{
+                grid-column: 1/2;
+                grid-row: 1/2;
+                span{
+                    font-size: 1.7rem;
+                    color:rgba($color: #fff, $alpha: .9);
+                    animation-name: animateInAnimation;
+                    animation-duration: 1.2s;
+                }
+            }
+            .changeLevelSeperator{
+                align-self: center;
+                grid-row: 1/2;
+                grid-column: 1/4;
+                height: 50%;
+                width: 50%;
+                border-bottom: 1px #eab839 solid;
+                animation-name: animateInAnimation;
+                animation-duration: 1.2s;
+            }
+            @mixin changeLevelDefaults {
+                grid-row: 2/3;
+                background-color: rgba($greenColor, $alpha: .25);
+                height: 100%;
+                border-radius: 10px;
+                display: grid;
+                grid-template-rows: 35% 35% 30%;
+                grid-template-columns: 100%;
+                transition: all .5s ease;
+                animation-name: animateInAnimation;
+                animation-duration: 1.4s;
+                &:hover{
+                    transform: scale(1.01);
+                }
+                .changeLevelinnerContainer{
+                    width: 100%;
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    span{
+                        font-size: 1.6rem;
+                    }
+                }
+
+                
+            }
+            .changeLevelBasic{
+                @include changeLevelDefaults;
+                background-color: rgba($color: $greenColor,  $alpha: .35);
+                &:hover{
+                    background-color: rgba($color: $greenColor,  $alpha: .50);
+                }
+                span{
+                    color: rgba($color: $greenColor, $alpha: 1);
+                }
+            }
+            .changeLevelNormal{
+                @include changeLevelDefaults;
+                background-color: rgba($color: $blueColor,  $alpha: .35);
+                &:hover{
+                    background-color: rgba($color: $blueColor,  $alpha: .50);
+                }
+                span{
+                    color: rgba($color: $blueColor, $alpha: 1);
+                }
+            }
+            .changeLevelPremium{
+                @include changeLevelDefaults;
+                background-color: rgba($color: $pinkColor,  $alpha: .35);
+                &:hover{
+                    background-color: rgba($color: $pinkColor,  $alpha: .50);
+                }
+                span{
+                    color: rgba($color: $pinkColor, $alpha: 1);
+                }
+            }
+        }
+    }
+}

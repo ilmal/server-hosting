@@ -1,0 +1,51 @@
+.headerBanner {
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 70px;
+  transition: all 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.headerInnerBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.headerInnerBanner a {
+  pointer-events: visible;
+  margin-right: 40px;
+  text-decoration: none;
+  transition: 1s all ease;
+  color:white;
+  span{
+    transition: 1s all ease;
+  }
+  &:hover{
+    color:rgba($color: $greenColor, $alpha: 0.8);
+    span{
+      color:rgba($color: $greenColor, $alpha: 0.8);
+    }
+  }
+}
+
+.homeLink {
+  margin-left: 40px;
+  font-size: 24px;
+  color: rgba($color: #fff, $alpha: 1);
+  font-weight:normal;
+  span{
+    font-size: 25px;
+    margin-left: 2px;
+    color: $blueColor;
+    font-weight: lighter;
+  }
+}

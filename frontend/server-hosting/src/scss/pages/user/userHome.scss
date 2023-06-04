@@ -1,0 +1,678 @@
+.userHomeLayout {
+  min-height: 110vh;
+  width: 100%;
+  margin-top: 3%;
+  display: grid;
+  grid-template-columns: 20% 5% repeat(3, 20% 5%);
+  grid-template-rows: auto repeat(7, 11% 3%);
+  row-gap: 3vh;
+  align-items: center;
+}
+
+/*scss for menu*/
+
+.userHomeServerName {
+  margin: auto;
+  grid-column: 2/10;
+  grid-row: 2/3;
+  span {
+    font-size: 50px;
+    color: rgba($color: #fff, $alpha: 0.7);
+    transition: all ease 1s;
+    @include hover($greenColor);
+    animation-name: animateInAnimation;
+    animation-duration: .5s;
+  }
+}
+
+.userHomeSegment {
+  border-radius: 10px;
+  background-color: $backgroundColor;
+  width: 100%;
+  height: 100%;
+  animation-name: animateInAnimation;
+  animation-duration: 1s;
+}
+
+/*---------------------
+scss for the Server tab 
+---------------------*/
+
+.userHomeStatusOfServer {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  display: grid;
+  grid-template-rows: 65% auto;
+  .checkStatus{
+    color: rgba($color: #fff, $alpha: 0.6);
+    transition: all 1s ease;
+    span {
+      margin-left: 10px;
+      font-size: 100%;
+      color: rgba($color: #fff, $alpha: 0.6);
+      transition: all 1s ease;
+      pointer-events: none;
+    }
+    &:hover{
+      color: rgba($greenColor, $alpha: 0.5);
+      span{
+        color: rgba($greenColor, $alpha: 0.5);
+      }
+    }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .defaultDiv{
+    border-radius: 10px 10px 0px 0px;
+    pointer-events: none;
+  }
+  .runningDiv {
+    background-color: rgba($greenColor, $alpha: 0.15);
+    p {
+      font-size: 150%;
+      color: rgba($greenColor, $alpha: 0.9);
+    }
+  }
+  .closingDiv{
+    background-color: rgba($color: $yellowColor, $alpha: 0.15);
+    p {
+      font-size: 150%;
+      color: rgba($color: $yellowColor, $alpha: 0.9);
+    }
+  }
+  .closedDiv{
+    background-color: rgba($redColor, $alpha: 0.15);
+    p {
+      font-size: 150%;
+      color: rgba($redColor, $alpha: 0.9);
+    }
+  }
+}
+
+.spinAnimation::before{
+  transition: all 1s ease-out;
+  transform: rotate(360deg);
+}
+
+.suerhomeStartStopServer {
+  grid-column: 5/6;
+  grid-row: 4/5;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  align-items: center;
+  #random23894723 {
+    grid-row: 1/2;
+    grid-column: 1/3;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s all ease;
+    .userHomeLineBetweenStartStop {
+      height: 20px;
+      border-left: 1px rgba($color: #fff, $alpha: 0.3) solid;
+      grid-row: 1/2;
+    }
+  }
+  .innerDivStart {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    span {
+      transition: 1s all ease;
+      pointer-events: none;
+    }
+    &:hover {
+      span {
+        color: rgba($greenColor, $alpha: 0.9);
+      }
+    }
+    &:hover ~ #random23894723 {
+      background-color: rgba($greenColor, $alpha: 0.15);
+      z-index: 1;
+    }
+  }
+  .innerDivStop {
+    grid-column: 2/3;
+    grid-row: 1/1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s all ease;
+    z-index: 2;
+    span {
+      transition: 1s all ease;
+      pointer-events: none;
+    }
+    &:hover {
+      span {
+        color: rgba($color: $redColor, $alpha: 0.9);
+      }
+    }
+    &:hover ~ #random23894723 {
+      background-color: rgba($color: $redColor, $alpha: 0.15);
+      z-index: 1;
+    }
+  }
+  span {
+    font-size: 20px;
+    color: rgba($color: #fff, $alpha: 0.8);
+  }
+}
+
+.userHomeIpAdress {
+  grid-column: 7/8;
+  grid-row: 4/5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  span {
+    @include hover;
+    font-size: 20px;
+    color: rgba($blueColor, $alpha: 0.7);
+    cursor: copy;
+  }
+  p {
+    font-size: 20px;
+    color: rgba($color: #fff, $alpha: 0.7);
+  }
+}
+
+.logsMainContainer{
+  grid-column: 3/4;
+  grid-row: 6/11;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80% 20%;
+  transition: all ease .5s;
+  .logsText{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    overflow:auto;
+    border: 10px solid #1a1f22;
+    border-radius: 10px 10px 0px 0px;
+    transition: all ease .5s;
+    cursor: grab;
+    span{
+      color:rgba(#fff, $alpha: .8);
+      line-height: 150%;
+      font-size: .8rem;
+      white-space: pre;
+      transition: all ease .5s;
+      p{
+        height: 20px;
+      }
+    }
+  }
+
+  .logsExpandArrow{
+    z-index: 1;
+    cursor: default;
+    opacity: 0;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    color: white;
+    display: flex;
+    justify-self: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: 1s all ease;
+    &::before{
+      display: flex;
+      justify-self: end;
+    }
+  }
+  
+  .logsTextContainer{
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 100%;
+    background-color: $backgroundColor;
+    border-radius: 0px 0px 10px 10px;
+    span{
+      grid-column: 2/3;
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      color: rgba(#fff, $alpha: .7);
+      font-size: 2rem;
+    }
+    div{
+      width: 100%;
+      height: 100%;
+      grid-column: 3/4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      div{
+        color: rgba(#fff, $alpha: .7);
+        transition: all 1s ease;
+        font-size: .7em;
+      }
+      &:hover{
+        color: rgba($greenColor, $alpha: 0.5);
+      }
+    }
+  }
+}
+
+.logsMainContainerHover{
+  &:hover{
+    box-shadow: inset 0 0 100px #111416;
+    .logsText{
+      transition: all ease .5s;
+      border: 5px solid #111416;
+      span{
+        transition: all ease .5s;
+        margin-left: 5px;
+      }
+    }
+    .logsExpandArrow{
+      opacity: 1;
+    }
+  }
+}
+
+.logsMainContainer .logsMessageContainer{
+  grid-row: 1/2;
+  grid-column: 1/2;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #1a1e20;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 37% 26% 37%;
+  .logsMessageBanner{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+      font-size: 1.5rem;
+    }
+  }
+  .logsMessageBannerRed{
+    //background-color: rgba($color: $redColor, $alpha: 0.15);
+    span{
+      color: rgba($color: $redColor, $alpha: 0.7)
+    } 
+  }
+  .logsMessageBannerYellow{
+    //background-color: rgba($color: $yellowColor, $alpha: 0.15);
+    span{
+      color: rgba($color: $yellowColor, $alpha: 0.7);
+    }
+  }
+}
+
+
+.logsMainContainerExpanded{
+  grid-column: 3/8;
+  grid-row: 4/11;
+  z-index: 10;
+  .logsText span{
+    font-size: 1rem;
+    bottom: 100px;
+  }
+}
+
+.playtimeContainer{
+  grid-column: 3/6;
+  grid-row: 12/15;
+  height: 70%;
+  align-self: start;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 30% 70%;
+  .playtimeTitleContainer{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60% 40%;
+    justify-items: center;
+    align-items: center;
+    span{
+      grid-column: 1/2;
+      grid-row: 2/3;
+      font-size: 2rem;
+      color: rgba($color: #fff, $alpha: .7);
+    }
+  }
+  .playtimeInfoContainer{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 49.5% 1% 49.5%;
+    grid-template-rows: 100%;
+    .playtimeTimeContainer{
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 49% 2% 49%;
+      grid-template-rows: 30% 70%;
+      .playtimetimedescription{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        span{
+          color: rgba($color: #fff, $alpha: .7);
+          transform: translateY(1rem);
+        }
+      }
+      .playtimetimetime{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        span{
+          color: rgba($color: $blueColor, $alpha: .7);
+          font-size: 3rem;
+        }
+      }
+    }
+    .playtimeContainerLine{
+      grid-column: 2/3;
+      grid-row: 1/2;
+      width: 100%;
+      height: 30%;
+      border-right: rgba($color: #fff, $alpha: .3) solid 1px;
+      display: flex;
+      align-self: center;
+    }
+    .playtimeBtnContainer{
+      grid-column: 3/4;
+      grid-row: 1/2;
+      justify-self: center;
+      align-self: center;
+      button{
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding: 1rem 4rem 1rem 4rem;
+        background-color: rgba($blueColor, $alpha: 0.2);
+        color: rgba($blueColor, $alpha: 0.8);
+        transition: all .5s ease;
+        &:hover{
+          color: rgba($blueColor, $alpha: 1);
+          background-color: rgba($blueColor, $alpha: .3);
+        }
+      }
+    }
+  }
+}
+
+/*-------------------------------------- 
+scss for the server config change menu 
+--------------------------------------*/
+
+@mixin userHomeChangeConfig {
+  grid-row: 6/11;
+  grid-column: 5/8;
+  display: grid;
+  grid-template-columns: 10% 35% 10% 35% 10%;
+  grid-template-rows: 33% 33% 33%;
+  justify-content: center;
+  align-items: center;
+  color: rgba($color: #fff, $alpha: 0.7);
+}
+
+@mixin userHomeChangeConfigLayout {
+  grid-template-rows: 25% 25% 25% 25%;
+  .userHomeChangeBtn {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    button {
+      width: 100%;
+    }
+  }
+  .userHomeChangeWhitelist {
+    grid-column: 4/5;
+    grid-row: 3/5;
+    span {
+      display: block;
+    }
+  }
+  .userHomeChangeOps {
+    grid-column: 4/6;
+    grid-row: 1/3;
+    span {
+      display: block;
+    }
+  }
+}
+
+.userHomeChangeConfig {
+  @include userHomeChangeConfig();
+}
+
+.userHomeChangeConfigExtendOne {
+  @include userHomeChangeConfig();
+  @include userHomeChangeConfigLayout();
+  grid-row: 6/13;
+}
+
+.userHomeChangeConfigExtendTwo {
+  @include userHomeChangeConfig();
+  @include userHomeChangeConfigLayout();
+  grid-row: 6/16;
+}
+
+.userHomeChangeDefaults {
+  p {
+    display: inline;
+    font-size: 20px;
+    color: rgba($color: #fff, $alpha: 0.7);
+  }
+  span {
+    display: inline;
+    font-size: 20px;
+    color: rgba($color: #fff, $alpha: 0.4);
+  }
+  select {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: transparent;
+    color: rgba($color: #fff, $alpha: 0.4);
+  }
+  input {
+    border: none;
+    color: rgba($color: #fff, $alpha: 0.4);
+    background-color: transparent;
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2);
+    font-size: 20px;
+    width: 50%;
+    outline: none;
+    text-indent: 3px;
+    &::placeholder{
+      text-indent: 3px;
+    }
+  }
+  button {
+    border: none;
+    background-color: rgba($greenColor, $alpha: 0.15);
+    color: $greenColor;
+    border: none;
+    padding: 15px 60px;
+    border-radius: 10px;
+    transition: all ease 1s;
+    outline: none;
+    &:hover {
+      color: $greenColor;
+      background-color: rgba($color: $greenColor, $alpha: 0.35);
+    }
+  }
+}
+
+.userHomeChangeServerName {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.userHomeChangeVersion {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  select{
+    font-size: 120%;
+    &:focus{
+      font-size: 100%;
+    }
+    option{
+      background-color: rgba($backgroundColor, $alpha: 0.9);
+      color: rgba(#fff, $alpha: 0.8);
+      outline: none;
+    }
+  }
+}
+
+.userHomeChangeDifficulty {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  select{
+    font-size: 120%;
+    &:focus{
+      font-size: 100%;
+    }
+    option{
+      background-color: rgba($backgroundColor, $alpha: 0.9);
+      color: rgba(#fff, $alpha: 0.8);
+      outline: none;
+    }
+  }
+}
+
+.userHomeChangeWhitelist {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  span{
+    display: block;
+  }
+  .whiteArray{
+    display: block;
+    cursor: default;
+    &:hover{
+      color: $redColor;
+    }
+  }
+}
+
+.userHomeChangeOps {
+  grid-column: 4/6;
+  grid-row: 1/2;
+  span {
+    display: block;
+  }
+  .opsArray{
+    display: block;
+    cursor: default;
+    &:hover{
+      color:$redColor;
+    }
+  }
+}
+
+.userHomeChangeBtn {
+  grid-column: 4/5;
+  grid-row: 3/4;
+  button {
+    width: 100%;
+  }
+}
+
+/*--------------------
+scss for options tab 
+--------------------*/
+
+.changeNameEmail {
+  grid-row: 4/9;
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    display: inline;
+  }
+  span {
+    display: inline;
+  }
+}
+
+.changePasswordDefault {
+  grid-row: 4/6;
+  grid-column: 5/6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.changePasswordChange{
+  grid-row: 4/9;
+  grid-column: 5/8;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-columns: 10% 40% 40% 10%;
+  .inner{
+    grid-row: 2/3;
+    grid-column: 2/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    div{
+      width: 70%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+}
+
+.userHomeLogoutContainerDefaults{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button{
+    background-color: rgba($color: $yellowColor, $alpha: 0.15);
+    color: rgba($color: $yellowColor, $alpha: 0.9);
+    &:hover{
+      background-color: rgba($color: $yellowColor, $alpha: 0.25);
+      color: rgba($color: $yellowColor, $alpha: 0.9);
+    }
+  }
+}
+
+.userHomeLogoutContainer{
+  grid-row: 4/6;
+  grid-column: 7/8;
+}
+
+.userHomeLogoutContainerMoved{
+  grid-row: 10/13;
+  grid-column: 3/4;
+}
