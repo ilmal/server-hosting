@@ -19,7 +19,7 @@ const Header = () => {
                 })
                 return
             }
-            history.push("/user/home")
+            history("/user/home")
             window.location.reload()
             return
         }

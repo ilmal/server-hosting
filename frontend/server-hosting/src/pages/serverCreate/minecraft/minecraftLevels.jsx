@@ -63,10 +63,10 @@ const MinecraftLevels = (props) => {
     const toServer = () => {
         console.log(state.auth)
         if (!state.auth) {
-            history.push("/user/login");
+            history("/user/login");
             window.location.reload();
         } else {
-            history.push("/user/home");
+            history("/user/home");
             window.location.reload();
         }
     }

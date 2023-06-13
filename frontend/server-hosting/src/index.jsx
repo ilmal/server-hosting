@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client"
 import {
     BrowserRouter as Router,
     Route,
@@ -16,34 +16,21 @@ import { TopMessage } from "./components/topMessages/index"
 
 
 const MainComponent = () => {
-    const [loading, setLoading] = useState(true)
-
-    React.useEffect(async () => {
-        if (!loading) return
-        setLoading(false)
-    }, [loading])
-
-    if (loading) {
-        return (
-            <h1 className="loadingText">Loading...</h1>
-        )
-    } else {
-        return (
-            <Provider store={store}>
-                <Router>
-                    <TopMessage />
-                    <Header />
-                    <Routes>
-                        <Route path="/" component={HomeRouter} />
-                    </Routes>
-                    <Tooltips />
-                </Router>
-            </Provider>
-        )
-    }
+    return (
+        <Provider store={store}>
+            <Router>
+                <TopMessage />
+                <Header />
+                <Routes>
+                    <Route path="*" element={<HomeRouter/>} />
+                </Routes>
+                <Tooltips />
+            </Router>
+        </Provider>
+    )
 }
 
-ReactDOM.render(
+
+ReactDOM.createRoot(document.querySelector("#root")).render(
     <MainComponent />
-    , document.querySelector("#root")
 )

@@ -596,3 +596,23 @@
         }
     }
 }
+
+// responsiveness
+
+@media only screen and (max-height: 1000px) {
+    // fix ark text
+    .homePage2Card2 .whiteBack .textBottom span{
+      display: flex;
+      flex-direction: row;
+      p{
+        display: flex;
+        align-self: flex-end;
+        margin-bottom: 5px;
+        margin-left: 10px;
+      }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+}

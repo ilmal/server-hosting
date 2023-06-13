@@ -18,7 +18,7 @@ export const passFormPayment = (history) => {
     }
 
     const redirectToLogin = () => {
-        history.push("/user/login");
+        history("/user/login");
         window.location.reload();
     }
 

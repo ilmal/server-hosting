@@ -22,7 +22,7 @@ const Confirmation = () => {
         token,
         id
     }).then(res => {
-        history.push("/user/home");
+        history("/user/home");
         window.location.reload()
     })
 

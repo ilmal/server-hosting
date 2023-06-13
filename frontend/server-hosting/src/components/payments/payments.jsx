@@ -3,7 +3,6 @@ import axios from "axios"
 import { CardNumberElement, CardExpiryElement, CardCvcElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import store from "../../store"
 import { useNavigate } from "react-router-dom";
-import { StartServer } from "../../redux/actions"
 
 // images
 import amexIcon from "../../images/stripe/amexIcon.svg"
@@ -103,9 +102,8 @@ export const OneTimePayment = (props) => {
                 type: "MESSAGE",
                 payload: "Payment Successfull!"
             })
-            history.push("/user/home");
+            history("/user/home");
             window.location.reload()
-            store.dispatch(StartServer)
             return
 
         } catch (error) {

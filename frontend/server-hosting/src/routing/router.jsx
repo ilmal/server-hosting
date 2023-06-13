@@ -4,17 +4,21 @@ import {
     Routes
 } from "react-router-dom"
 
-import homeRouter from "./home/homeRouter"
-import notFoundPage from "./misc/notFoundPage"
+import HomeRouterComponent from "./home/homeRouter"
+import NotFoundPage from "./misc/notFoundPage"
+import ServerRouter from "./server/serverRouter"
 
 const HomeRouter = () => {
     return (
-        <Router>
-            <Routes>
-                <Route exact path="/" component={homeRouter} />
-                <Route path="*" component={notFoundPage} />
-            </Routes>
-        </Router>
+        <>
+        <Routes>
+            <Route exact path="/" element={<HomeRouterComponent/>} />
+            <Route exact path="/server" element={<ServerRouter />} />
+            <Route exact path="/server/*" element={<ServerRouter />} />
+            <Route path="*" element={<NotFoundPage/>} />
+        </Routes>
+        </>
+
     );
 }
 

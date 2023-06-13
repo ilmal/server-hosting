@@ -163,22 +163,22 @@
   0%{
     transform: translateY(0);
   }
-  8%{
+  16%{
     transform: translateY(-20px);
   }
-  11%{
+  22%{
     transform: translateY(0);
   }
-  13%{
+  26%{
     transform: translateY(-10px);
   }
-  15%{
+  30%{
     transform: translateY(0px);
   }
-  16%{
+  32%{
     transform: translateY(-3px);
   }
-  19%{
+  38%{
     transform: translateY(0);
   }
   100%{
@@ -225,7 +225,7 @@
         span{
           color: rgba(#fff, $alpha: .7);
           transition: all 1s ease;
-          animation: pulseScrollDown 5s infinite
+          animation: pulseScrollDown 3s infinite
         }
       }
       .homePage2ArrowStick{
@@ -236,54 +236,6 @@
         background-color: rgba(#fff, $alpha: .7);
         transition: all 1s ease;
       }
-      // .homePage2ArrowBall{
-      //   grid-row: 1/2;
-      //   grid-column: 1/4;
-      //   background: rgba($backgroundColorBack, $alpha: 1);
-      //   width: 4.5em;
-      //   height: 4.5em;
-      //   border-radius: 50%;
-      //   display: flex;
-      //   justify-content: center;
-      //   align-items: center;
-      //   .homePage2ArrowBallInner{
-      //     height: 80%;
-      //     width: 80%;
-      //     background-color: rgba($orangeColor, $alpha: .15);
-      //     border-radius: 50%;
-      //     display: grid;
-      //     grid-template-columns: 35% 30% 35%;
-      //     grid-template-rows: 15% 45% 25% 15%;
-      //     .homePage2ArrowBallInnerRectangle{  
-      //       grid-column: 2/3;
-      //       grid-row: 2/3;
-      //       height: 100%;
-      //       width: 80%;
-      //       background-color: rgba($orangeColor, $alpha: .85);
-      //       display: flex;
-      //       justify-self: center;
-      //       align-self: center;
-      //     } 
-      //     .homePage2ArrowBallInnerTriangle{
-      //       grid-column: 2/3;
-      //       grid-row: 3/4;
-      //       width: 0;
-      //       height: 0; 
-      //       border-left: 1.2em solid transparent;
-      //       border-right: 1.2em solid transparent;
-      //       border-top: 1.2em solid rgba($orangeColor, $alpha: .85);
-      //       display: flex;
-      //       justify-self: center;
-      //       align-self: center;
-      //     }
-      //   }
-      //   &:hover{
-      //     .homePage2ArrowBallInner{
-      //       transition: all .5s ease;
-      //       background-color: rgba($orangeColor, $alpha: .35);
-      //     }
-      //   }
-      // }
     }
   }
   .homePage2Background{
@@ -354,68 +306,77 @@
         grid-column: 2/3;
       }
     }
-    // .homePage2Card1 {
-    //   grid-column: 1/2;
-    //   grid-row: 1/2;
-    //   @include homePage2CradDefault();
-    //   span {
-    //     @include homePage2CardFont();
-    //     grid-row: 1/2;
-    //     grid-column: 2/3;
-    //   }
-    // }
-    // .homePage2Card2 {
-    //   grid-column: 3/4;
-    //   grid-row: 1/2;
-    //   @include homePage2CradDefault();
-    //   span {
-    //     @include homePage2CardFont();
-    //     grid-row: 1/2;
-    //     grid-column: 2/3;
-    //   }
-    // }
-    // .homePage2Card3 {
-    //   grid-column: 5/6;
-    //   grid-row: 1/2;
-    //   @include homePage2CradDefault();
-    //   span {
-    //     @include homePage2CardFont();
-    //     grid-row: 1/2;
-    //     grid-column: 2/3;
-    //   }
-    // }
-    // .homePage2Card4 {
-    //   grid-column: 1/2;
-    //   grid-row: 3/4;
-    //   @include homePage2CradDefault();
-    //   span {
-    //     @include homePage2CardFont();
-    //     grid-row: 1/2;
-    //     grid-column: 2/3;
-    //   }
-    // }
-    // .homePage2Card5 {
-    //   grid-column: 3/4;
-    //   grid-row: 3/4;
-    //   @include homePage2CradDefault();
-    //   span {
-    //     @include homePage2CardFont();
-    //     grid-row: 1/2;
-    //     grid-column: 2/3;
-    //   }
-    // }
-    // .homePage2Card6 {
-    //   grid-column: 5/6;
-    //   grid-row: 3/4;
-    //   @include homePage2CradDefault();
-    //   span {
-    //     @include homePage2CardFont();
-    //     grid-row: 1/2;
-    //     grid-column: 2/3;
-    //   }
-    // }
   }
 }
+
+// responsiveness
+
+@media only screen and (max-height: 1000px) {
+    // fix ark text
+    .homePage2Card2 .whiteBack .textBottom span{
+      display: flex;
+      flex-direction: row;
+      p{
+        display: flex;
+        align-self: flex-end;
+        margin-bottom: 5px;
+        margin-left: 10px;
+      }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+  // fix main title text size
+  .homeMainSpan{
+    font-size: 3rem !important;
+    span{
+      font-size: 3rem !important;
+    }
+  }
+  // fix second page containers layout
+  .homePage2MainContaiener{
+    height: 200vh;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 15% 25% 60%;
+    
+    .homePage2Title{
+      grid-column: 2/3;
+      grid-row: 2/3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span{
+        font-size: 4rem !important;
+      }
+    }
+    .homePage2Cards{
+      grid-column: 2/3;
+      grid-row: 3/4;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(3, 27.33% 5%);
+      .homePage2Card1{
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      .homePage2Card2{
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+      .homePage2Card3{
+        grid-column: 1/2;
+        grid-row: 5/6;
+        .comingSoon{
+          flex-direction: row !important;
+          span{
+            margin: 0 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 //scss for err event
 

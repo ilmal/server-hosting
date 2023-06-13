@@ -4,6 +4,7 @@ import { animateScroll as scroll, scroller } from 'react-scroll'
 import store from "../store"
 
 const HomePage = () => {
+  console.log("Running HomePage")
   const [loadAnimation, changeloadAnimation] = useState(false)
   const [i, changei] = useState(-1)
   const [gamesAnimation, changeGamesAnimation] = useState(true)
@@ -45,28 +46,35 @@ const HomePage = () => {
     }
     setTimeout(changeGame, 3000);
 
-    window.onscroll = () => {
-      if (window.pageYOffset < 0) {
-        return
-      }
-      if (offset > window.pageYOffset) {
-        console.log("scroll up")
-        scroll.scrollToTop({
-          duration: 300,
-          smooth: "easeOutQuad",
-        })
-        changeColorArrowDown(true)
-      } else if (offset < window.pageYOffset) {
-        console.log("scroll down")
-        scroller.scrollTo("section2", {
-          duration: 300,
-          smooth: "easeOutQuad",
-          offset: 500
-        })
-        changeColorArrowDown(false)
-      }
-      setOffset(window.pageYOffset)
-    }
+    // window.onscroll = () => {
+    //   console.log(offset - window.pageYOffset)
+    //   // if ((offset - window.pageYOffset) < 10 && (offset - window.pageYOffset) > -10) {
+    //   //   return
+    //   // }
+    //   if (window.innerHeight < window.pageYOffset){
+    //     return
+    //   }
+    //   if (window.pageYOffset < 0) {
+    //     return
+    //   }
+    //   if (offset > window.pageYOffset && window.pageYOffset !== 0) {
+    //     console.log("scroll up")
+    //     scroll.scrollToTop({
+    //       duration: 200,
+    //       smooth: "easeOutQuad",
+    //     })
+    //     changeColorArrowDown(true)
+    //   } else if (offset < window.pageYOffset && window.pageYOffset >! window.innerHeight) {
+    //     console.log("scroll down")
+    //     scroller.scrollTo("section2", {
+    //       duration: 200,
+    //       smooth: "easeOutQuad",
+    //       offset: window.innerHeight/2
+    //     })
+    //     changeColorArrowDown(false)
+    //   }
+    //   setOffset(window.pageYOffset)
+    // }
 
     // check for referals. If referal is found, add to cookie for later use
     if (store.getState().querySelectors.ref) {
@@ -79,7 +87,7 @@ const HomePage = () => {
     switch (e.target.id) {
       case "minecraftSelector":
         localStorage.removeItem("isCardPressed")
-        history.push("/server/minecraft");
+        history("/server/minecraft");
         window.location.reload();
         break;
       default:
@@ -133,14 +141,14 @@ const HomePage = () => {
           <span>Choose your game</span>
         </div>
         <div id="homePage2Card" className="homePage2Cards">
-          <div className="homePage2Card1">
+          <div className="homePage2Card1 homePage2CardDefault">
             <div className="whiteBack" id="minecraftSelector" onClick={gameSelect}>
               <div className="textBottom">
                 <span>Minecraft</span>
               </div>
             </div>
           </div>
-          <div className="homePage2Card2">
+          <div className="homePage2Card2 homePage2CardDefault">
             <div className="whiteBack" id="arkSelector">
               <div className="blurPartTop" />
               <div className="comingSoon">
@@ -152,7 +160,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="homePage2Card3">
+          <div className="homePage2Card3 homePage2CardDefault">
             <div className="whiteBack" id="rustSelector">
               <div className="blurPartTop" />
               <div className="comingSoon">

@@ -127,7 +127,7 @@ const ServerPlan = (props) => {
                     OneTimePayment(props)
                 )
             }
-            history.push("/")
+            history("/")
             window.location.reload()
         }
 
