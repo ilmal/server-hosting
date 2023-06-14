@@ -1,11 +1,12 @@
 .minecraftBody{
     width: 100%;
-    height: 90vh;
+    height: 100vh;
+    min-height: 1200px;
     display: grid;
     grid-template-columns: 10% auto 10%;
-    grid-template-rows: 5% 10% auto;
+    grid-template-rows: 8% 10% auto;
 
-    span{
+    .title_span{
         grid-column: 2/3;
         grid-row: 2/3;
         text-align: center;
@@ -13,6 +14,7 @@
         font-size: 50px;
         animation-name: animateInAnimation;
         animation-duration: 1s;
+        min-height: 400px;
     }
 
     .testServerCard{
@@ -93,6 +95,7 @@
         grid-column: 2/3;
         grid-row: 3/4;
         width: 100%;
+        min-height: 800px;
         height: 100%;
         display: grid;
         grid-template-columns: 33% auto 33%;
@@ -600,19 +603,48 @@
 // responsiveness
 
 @media only screen and (max-height: 1000px) {
-    // fix ark text
-    .homePage2Card2 .whiteBack .textBottom span{
-      display: flex;
-      flex-direction: row;
-      p{
-        display: flex;
-        align-self: flex-end;
-        margin-bottom: 5px;
-        margin-left: 10px;
-      }
+    // remove description
+    .minecraftBody .container .minecraftCards{
+        grid-template-rows: 40% 30% 30%;
+        .seperationline{
+            display: none;
+        }
+        .description{
+            display: none;
+        }
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1250px) {
 
+    .minecraftBody{
+        grid-template-rows: 8% 20% auto;
+        .container{
+            min-height: none;
+            grid-template-rows: repeat(3, 25% 8%);
+            grid-template-columns: auto;
+
+            .basic{
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+            .normal{
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+            .premium{
+                grid-column: 1/2;
+                grid-row: 5/6;
+            }
+            .minecraftCards{
+                grid-template-rows: 40% 30% 30%;
+                .seperationline{
+                    display: none;
+                }
+                .description{
+                    display: none;
+                }
+            }
+        }
+    }    
 }

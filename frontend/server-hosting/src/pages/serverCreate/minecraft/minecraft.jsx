@@ -123,7 +123,7 @@ const MinecraftCreate = () => {
     } else {
         return (
             <div className="minecraftBody">
-                <span>Choose your Minecraft Server!</span>
+                <span className="title_span">Choose your Minecraft Server!</span>
                 <div className="container">
                     {landingPageFunc()}
                 </div>
