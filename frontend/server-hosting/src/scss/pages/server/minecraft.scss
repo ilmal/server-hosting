@@ -648,3 +648,90 @@
         }
     }    
 }
+
+// for the payment page
+
+@media only screen and (max-width: 1000px) {
+
+    .minecraftBasicBody{
+        min-height: auto;
+        grid-template-rows: auto;
+        .overviewBody{
+            grid-template-columns: 10% 80% 10%;
+            grid-template-rows: auto;
+            & * {
+                grid-column: 2/3;
+            }
+            .header{
+                text-align: center;
+                grid-row: 1/2;
+                min-height: 100px;
+            }
+            .planContainer{
+                grid-row: 2/3;
+                min-height: 150px;
+            }
+            .priceContainer{
+                grid-column: 2/3;
+                grid-row: 3/4;
+                min-height: 150px;
+            }
+            .specsConatiner{
+                grid-row: 4/5;
+                min-height: 300px;
+            }
+            .changeLevelContainer{
+                min-height: 500px;
+                grid-row: 5/6;
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(4, 20% 5%);
+                & *{
+                    grid-column: 1/2 !important;
+                }
+                .changeLevelBasic{
+                    grid-row: 3/4 !important;
+                }
+                .changeLevelNormal{
+                    grid-row: 5/6 !important;
+                }
+                .changeLevelPremium{
+                    grid-row: 7/8 !important;
+                }
+            }
+            .gameContainer{
+                display: none;
+            }
+        }
+        .paymentBody{
+            grid-template-columns: 10% 80% 10%;
+            grid-template-rows: auto;
+            height: auto;
+            .header{
+                text-align: center;
+                grid-row: 1/2;
+                grid-column: 2/3;
+                min-height: 100px;
+            }
+            .paymentInfoContainer{
+                grid-row: 2/3;
+                grid-column: 2/3;
+                min-height: 200px;
+                grid-template-rows: 50% 25% 25%;
+                .paymentInfoPriceContainer .paymentInfoPrice{
+                    grid-row:3/4;
+                }
+            }
+            .paymentDataContainer{
+                grid-row: 3/4;
+                grid-column: 2/3;
+                min-height: 800px;
+                .paymentLoginSignupButtonLinkContainer{
+                    flex-direction: column;
+                    button{
+                        background-color: #eab839;
+                    }
+                }
+            }
+        }
+    }    
+}

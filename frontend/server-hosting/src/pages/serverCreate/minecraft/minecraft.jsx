@@ -23,6 +23,10 @@ const MinecraftCreate = () => {
         localStorage.setItem("isCardPressed", isCardPressed)
     }, [isCardPressed])
 
+    useEffect(()=> {
+        window.scrollTo(0,0)
+    }, [])
+
     // ----------- stripe -------------
 
     const PUBLIC_KEY = "pk_test_51JCk7wGWd5hOwkfP4Q7UpN498uJW5oa2q7vb97viqghzRSpqilFLqtCB161iX4LOg68mkwqwHaptGyl0rgaB5NSf0080vAPRe9"
