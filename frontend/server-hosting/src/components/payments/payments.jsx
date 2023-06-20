@@ -74,14 +74,14 @@ export const OneTimePayment = (props) => {
         try {
             const { id } = paymentMethod
             const response = await axios.post("/stripe", {
-                is_past_server: checkForPastServer(),
+                //is_past_server: checkForPastServer(),
                 product: {
                     game: "minecraft",
                     plan: props.values.plan
                 },
                 id,
-                ref: store.getState().cookies.ref,
-                userID: store.getState().cookies.userID
+                //ref: store.getState().cookies.ref,
+                //userID: store.getState().cookies.userID
             })
             // dispaying err if response is err
 

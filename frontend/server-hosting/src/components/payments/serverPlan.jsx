@@ -101,8 +101,8 @@ const ServerPlan = (props) => {
             )
         }
         return (
-            //OneTimePayment(props)
-            paymentLoginSignupHook
+            OneTimePayment(props)
+            //paymentLoginSignupHook
         )
     }
 
@@ -121,24 +121,18 @@ const ServerPlan = (props) => {
 
     if (props.values.type === "past_servers") {     // checking if the loaded payment is for an already existing server
 
-        const isLoggedInFunc = () => {
-            if (userData.auth) {
-                return (
-                    OneTimePayment(props)
-                )
-            }
-            history("/")
-            window.location.reload()
-        }
-
         const findPastServerFunc = () => {
-            for (let i = 0; i < store.getState().user.past_servers.length; i++) {
-                const server = store.getState().user.past_servers[i]
-                if (server.server_id != props.values.payload) continue
-                return {
-                    price: store.getState().productInfo[server.plan.toLowerCase()].price,
-                    plan: server.plan
-                }
+            // for (let i = 0; i < store.getState().user.past_servers.length; i++) {
+            //     const server = store.getState().user.past_servers[i]
+            //     if (server.server_id != props.values.payload) continue
+            //     return {
+            //         price: store.getState().productInfo[server.plan.toLowerCase()].price,
+            //         plan: server.plan
+            //     }
+            // }
+            return {
+                price: 20,
+                plan: "NORMAL"
             }
             console.log('%c%s', 'color: red', "ERR, SERVER NOT FOUND AT: serverPlan.jsx/findPastServerFunc")
         }
@@ -198,7 +192,6 @@ const ServerPlan = (props) => {
                         <span>Pay</span>
                         <div className="paymentInnerHeaderSeperator" />
                     </div>
-                    {isLoggedInFunc()}
                 </div>
                 {paymentHandler()}
             </>

@@ -68,5 +68,9 @@ def mc_config(plan):
             config = build_config(PREMIUM)
     return config
 
-
-
+def get_plan_data(plan):
+    match plan:
+        case "basic": return BASIC
+        case "normal": return NORMAL
+        case "premium": return PREMIUM
+    Exception("CUSTOM ERR, plan inserted in get_plan_data() is not correct!")
